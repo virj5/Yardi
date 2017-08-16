@@ -1,4 +1,9 @@
+$(function(){
 
+   gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+});
 
  function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -16,14 +21,18 @@
       };
 
 function signOut() {
-  alert(123);
-      gapi.auth2.init();
+    // console.log(gapi.auth2.init();
 
     var auth2 = gapi.auth2.getAuthInstance();
-    console.log(true);
     
-    auth2.signOut().then(function () {
+
+     auth2.signOut().then(function () {
       console.log('User signed out.');
-      // window.location = "http://localhost:8000";
+       window.location = "http://localhost:8000";
     });
+
+
+
   }
+
+
